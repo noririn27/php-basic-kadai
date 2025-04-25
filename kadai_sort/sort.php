@@ -11,24 +11,22 @@
     <?php
       $nums = [15, 4, 18, 23, 10];
 
-      function sortup_nums($nums) {
-        echo '昇り順にソートします。<br>';
-        sort($nums);
-        foreach($nums as $num) {
-          echo $num . '<br>';
+      function sort_2way($array, $order) {
+        if ($order === TRUE) {
+          echo '昇り順にソートします。<br>';
+          sort($array);
+        } else {
+          echo '降り順にソートします。<br>';
+          rsort($array);
+        }
+        foreach ($array as $value) {
+          echo $value . '<br>';
+        
         }
       }
 
-      function sortdown_nums($nums) {
-        echo '降り順にソートします。<br>';
-        rsort($nums);
-        foreach($nums as $num) {
-          echo $num . '<br>';
-        }
-      }
-
-      sortup_nums($nums);
-      sortdown_nums($nums);
+      sort_2way($nums, TRUE);
+      sort_2way($nums, FALSE);
     ?>
   </p>
   
